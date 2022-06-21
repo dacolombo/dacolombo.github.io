@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Regression on Daniele Colombo</title><link>https://www.dacolombo.github.io/tags/regression/</link><description>Recent content in Regression on Daniele Colombo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.dacolombo.github.io/tags/regression/index.xml" rel="self" type="application/rss+xml"/><item><title>DES treatment in advanced prostate cancer</title><link>https://www.dacolombo.github.io/projects/biostatistics/</link><pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate><guid>https://www.dacolombo.github.io/projects/biostatistics/</guid><description>In this project, we used the Byar &amp;amp; Greene prostate cancer data available from Vanderbilt Biostatistics Datasets. This is a dataset coming from a randomised clinical trial with the aim of comparing survival outcome according to different treatments. In particular, the patients are divided into four treatment groups, each one receiving 0.2 mg DES, 1.0 mg DES, 5.0 mg DES and placebo respectively. The dataset used contains data about survival time and clinical parameters of 506 patients suffering from prostate cancer in stages 3 and 4.</description><content>&lt;ul>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;p>In this project, we used the Byar &amp;amp; Greene prostate cancer data available from &lt;a href="https://hbiostat.org/data/">Vanderbilt Biostatistics Datasets&lt;/a>.
+This is a dataset coming from a randomised clinical trial with the aim of comparing survival outcome according to different treatments. In particular, the patients are divided into four treatment groups, each one receiving 0.2 mg DES, 1.0 mg DES, 5.0 mg DES and placebo respectively.
+The dataset used contains data about survival time and clinical parameters of 506 patients suffering from prostate cancer in stages 3 and 4.&lt;/p>
+&lt;h1 id="introduction">Introduction&lt;/h1>
+&lt;p>The prostate is a gland in the male reproductive system which produce and contain the fluid that forms part of semen. The semen-secreting gland cells can mutate into cancer cells which led to the prostate cancer.
+Prostate cancer cells usually require androgen hormones, such as testosterone, to grow. One possible approach for prostate cancer treatment is the androgen suppression therapy, which reduces the level of these hormones.
+The drug used in the study is the Diethylstilbestrol (DES), a synthetic ethinyl estrogen. Its anti-tumor efficacy is attributable to several actions on the prostate cancer:&lt;/p>
+&lt;ul>
+&lt;li>Negative feedback on hypothalamic-pituitary complex&lt;/li>
+&lt;li>Increasing SHBG, hence decreasing TST&lt;/li>
+&lt;li>Suppress leydig cells function&lt;/li>
+&lt;li>Telomerase inhibitor of cancer cells&lt;/li>
+&lt;/ul>
+&lt;p>However, from some studies it is known that DES has some adverse effects, in particular cardiotoxicity.&lt;/p>
+&lt;h1 id="data-preprocessing">Data preprocessing&lt;/h1>
+&lt;p>The preprocessing step consisted in variable categorization (e.g. death cause, age, blood pressure), removal of null values and of unnecessary varaibles.
+After that we were left with data about 474 patients.&lt;/p>
+&lt;h1 id="exposure-event-correlation">Exposure-event correlation&lt;/h1>
+&lt;p>Before doing an evaluation of the survival and the efficacy of the therapy, we evaluated the correlation between DES administration and cardiovascular death, using the Chi-squared test and odds ratios.
+The Chi-squared test was performed comparing vascular death with other events in all the treatment groups, resulting in a significative p-value indicating a relationship between the treatment and cardiovascular events.
+As expected, we also found a correlation between DES and cardiovascular events with the OR indicating a higher risk of cardiovascular event related to the higher dosage of DES, i.e. 5.0 mg&lt;/p>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/odds_ratio.png" class="center" />
+&lt;h1 id="survival-analysis">Survival analysis&lt;/h1>
+&lt;p>We then started looking at the survival data, firstly by taking a qualitative look using the Kaplan-Meier curves.
+As can be seen in the stratified plot, there seems to be a higher survival for patients treated with 1.0 mg of DES with respect to the other treatment groups which seems to have similar outcomes.&lt;/p>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/kaplan_meier.png" class="center" />
+&lt;h1 id="cox-model">Cox Model&lt;/h1>
+&lt;p>Through the Cox Model we could evaluate relevant covariates for survival. Once fitted, we plotted the model parameters through a forest plot and we found both:&lt;/p>
+&lt;ul>
+&lt;li>Risk factors: age group between 76-89, positive history of cardiovascular disease, presence of bone methastasis, heart strain ECG reading, tumor size.&lt;/li>
+&lt;li>Protective factors: treatment with 1.0 mg DES&lt;/li>
+&lt;/ul>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/cox_forest.png" class="center" />
+&lt;p>After fitting the Cox model, it was possible to predict the theoretical survival of a patient based on its health parameters. The selected patients for this evaluation had the following parameters:&lt;/p>
+&lt;ul>
+&lt;li>Patient 1 (median patient): no history of CVD, normal ECG, median tumor size, median weight index, no bone methastasis, lower age group.&lt;/li>
+&lt;li>Patient 2 (severe cancer and cardiovascular conditions): history of CVD, heart strain ECG reading, high tumor size, high weight index, bone methastasis, higher age group.&lt;/li>
+&lt;li>Patient 3 (severe cancer conditions): no history of CVD, normal ECG, high tumor size, median weight index, bone methastasis, lower age group.&lt;/li>
+&lt;li>Patient 4 (severe cardiovascular conditions): history of CVD, heart strain ECG reading, low tumor size, median weight index, no bone methastasis, lower age group.&lt;/li>
+&lt;/ul>
+&lt;p>As expected, patients with severe conditions showed a lower survival, especially the ones having both bad cancer and cardiovascular conditions. What was found of interest is also that in all patients, the 1.0 mg DES treatment performed better, with the other treatments performing similarly.&lt;/p>
+&lt;p>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/adjusted_curves1.png" class="center" />
+&lt;img src="https://www.dacolombo.github.io/biostatistics/adjusted_curves2.png" class="center" />
+&lt;/p>
+&lt;h1 id="accelerated-failure-time-aft-model">Accelerated Failure Time (AFT) model&lt;/h1>
+&lt;p>In order to get a confirmation of what was observed, we fitted an accelerated failure time model with the same covariates found to be relevant in the Cox model. The fitted model resulted in the survival time being distributed as a Weibull with coefficients (0.89, 1.12), with the AFT interpretation of the covariates being in line with the proportional hazard intepretation: variables found to increase the hazard were found to reduce the time of survival and vice versa.&lt;/p>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/aft.png" class="center" />
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Coefficient&lt;/th>
+&lt;th style="text-align:center">AFT interpretation&lt;/th>
+&lt;th style="text-align:center">PH interpretation&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">hx=1&lt;/td>
+&lt;td style="text-align:center">0.64&lt;/td>
+&lt;td style="text-align:center">1.65&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">DES 1.0 mg&lt;/td>
+&lt;td style="text-align:center">1.36&lt;/td>
+&lt;td style="text-align:center">0.71&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Ekg: heart strain&lt;/td>
+&lt;td style="text-align:center">0.67&lt;/td>
+&lt;td style="text-align:center">1.55&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Wt&lt;/td>
+&lt;td style="text-align:center">1.01&lt;/td>
+&lt;td style="text-align:center">0.98&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Bm=1&lt;/td>
+&lt;td style="text-align:center">0.65&lt;/td>
+&lt;td style="text-align:center">1.61&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Agegrp=76-89&lt;/td>
+&lt;td style="text-align:center">0.61&lt;/td>
+&lt;td style="text-align:center">1.74&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="logistic-regression-model">Logistic regression model&lt;/h1>
+&lt;p>We then used logistic regression to model the survival outcome based on the variables related to the patients. We managed to get a model with a sufficiently high AUC=0.72 and by using a sperimental threshold of 0.35 we obtained specificity and sensitivity at around 65%.
+Also in this case, the results were concordant with what was observed before: treatment with 5.0 mg DES and a history of CVD were found to significantly increase the odds of the event.&lt;/p>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/logistic_regression.png" class="center" />
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Threshold&lt;/th>
+&lt;th style="text-align:center">MIS rate&lt;/th>
+&lt;th style="text-align:center">Sensitivity&lt;/th>
+&lt;th style="text-align:center">Specificity&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">p = 0.5&lt;/td>
+&lt;td style="text-align:center">26.6%&lt;/td>
+&lt;td style="text-align:center">23.2%&lt;/td>
+&lt;td style="text-align:center">94%&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Sperimental = 0.348&lt;/td>
+&lt;td style="text-align:center">34.8%&lt;/td>
+&lt;td style="text-align:center">68.1%&lt;/td>
+&lt;td style="text-align:center">63.9%&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Variable&lt;/th>
+&lt;th style="text-align:center">Odds&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">DES 5.0 mg&lt;/td>
+&lt;td style="text-align:center">1.839 [1.036 , 3.266]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">Hx = 1&lt;/td>
+&lt;td style="text-align:center">4.081 [2.645 , 6.298]&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="competing-risk-analysis">Competing risk analysis&lt;/h1>
+&lt;p>To complete our analysis, we decided to use a more advanced model to correctly estimate marginal probability of an event in the presence of competing events for the same outcome. By considering cardiovascular events and cancer complications events as two competing risks for death, we evaluated how each covariate affected the two events for the patient.
+As can be seen in the table below, some interesting results can be evaluated from the competing risk analysis (note that hazard ratios significantly different from 1 are highlighted).
+First of all, it is evident that 1.0 mg of DES is a protective factor for death by prostate cancer, while 5.0 mg of DES is a risk factor for death by cardiovascular events. Moreover, as expected, we can see that cardiovascular-related covariates (e.g. problematic ECG) have an influence on cardiovascular events, while tumor-related covariates (e.g. tumore size, bone methastasis) have an influence on death by prostate cancer.&lt;/p>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/car_coefficients.png" class="center" />
+&lt;p>With this model we could then evaluate the cumulative incidence for each death cause stratified by treatment. With this plots, it&amp;rsquo;s possible to see that the probability of a cardiovascular event is highly increased with 5.0 mg of DES, while 1.0 mg of DES decreases the probability of death due to prostate cancer with respect to both other doses and placebo.&lt;/p>
+&lt;img src="https://www.dacolombo.github.io/biostatistics/car_plots.png" class="center" />
+&lt;h1 id="conclusions">Conclusions&lt;/h1>
+&lt;p>We evaluated the presence of correlation between DES exposure and cardiovascular events, observing that 5.0 mg of DES are positively related to death caused by cardiovascular events.
+Through the Cox PH and AFT model we evaluated the significant variables that inluence the survival of patients. Through these variables, we found that the optimal dose of DES is 1.0 mg as it significantly reduces the hazard.
+With logistic regression, we could build a model to classify a patient at risk for cardiovascular events, confirming that the treatment with 5.0 mg of DES are positively related to cardiovascular events.
+Lastly, through competing risk analysis we could observe the differences of the impact of variables on the different events of interest: death due to cardiovascular events and due to prostate cancer. Thanks to this analysis, we found that some variables not relevant in the standard Cox PH model becomes relevant for the event-specific model, like ECG read, cancer size and treatment with 5.0 mg DES. With this model, we could more percisely assess the parameters to consider and the best possible treatment.&lt;/p></content></item></channel></rss>
