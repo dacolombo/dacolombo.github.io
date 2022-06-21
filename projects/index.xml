@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Daniele Colombo</title><link>https://www.dacolombo.github.io/projects/</link><description>Recent content in Projects on Daniele Colombo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 05 Apr 2021 11:52:11 +0200</lastBuildDate><atom:link href="https://www.dacolombo.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>DES treatment in advanced prostate cancer</title><link>https://www.dacolombo.github.io/projects/biostatistics/</link><pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate><guid>https://www.dacolombo.github.io/projects/biostatistics/</guid><description>In this project, we used the Byar &amp;amp; Greene prostate cancer data available from Vanderbilt Biostatistics Datasets. This is a dataset coming from a randomised clinical trial with the aim of comparing survival outcome according to different treatments. In particular, the patients are divided into four treatment groups, each one receiving 0.2 mg DES, 1.0 mg DES, 5.0 mg DES and placebo respectively. The dataset used contains data about survival time and clinical parameters of 506 patients suffering from prostate cancer in stages 3 and 4.</description><content>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Daniele Colombo</title><link>/projects/</link><description>Recent content in Projects on Daniele Colombo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 05 Apr 2021 11:52:11 +0200</lastBuildDate><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>DES treatment in advanced prostate cancer</title><link>/projects/biostatistics/</link><pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate><guid>/projects/biostatistics/</guid><description>In this project, we used the Byar &amp;amp; Greene prostate cancer data available from Vanderbilt Biostatistics Datasets. This is a dataset coming from a randomised clinical trial with the aim of comparing survival outcome according to different treatments. In particular, the patients are divided into four treatment groups, each one receiving 0.2 mg DES, 1.0 mg DES, 5.0 mg DES and placebo respectively. The dataset used contains data about survival time and clinical parameters of 506 patients suffering from prostate cancer in stages 3 and 4.</description><content>&lt;ul>
 &lt;li>&lt;/li>
 &lt;/ul>
 &lt;p>In this project, we used the Byar &amp;amp; Greene prostate cancer data available from &lt;a href="https://hbiostat.org/data/">Vanderbilt Biostatistics Datasets&lt;/a>.
@@ -22,18 +22,18 @@ After that we were left with data about 474 patients.&lt;/p>
 &lt;p>Before doing an evaluation of the survival and the efficacy of the therapy, we evaluated the correlation between DES administration and cardiovascular death, using the Chi-squared test and odds ratios.
 The Chi-squared test was performed comparing vascular death with other events in all the treatment groups, resulting in a significative p-value indicating a relationship between the treatment and cardiovascular events.
 As expected, we also found a correlation between DES and cardiovascular events with the OR indicating a higher risk of cardiovascular event related to the higher dosage of DES, i.e. 5.0 mg&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/odds_ratio.png" class="center" />
+&lt;img src="/biostatistics/odds_ratio.png" class="center" />
 &lt;h1 id="survival-analysis">Survival analysis&lt;/h1>
 &lt;p>We then started looking at the survival data, firstly by taking a qualitative look using the Kaplan-Meier curves.
 As can be seen in the stratified plot, there seems to be a higher survival for patients treated with 1.0 mg of DES with respect to the other treatment groups which seems to have similar outcomes.&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/kaplan_meier.png" class="center" />
+&lt;img src="/biostatistics/kaplan_meier.png" class="center" />
 &lt;h1 id="cox-model">Cox Model&lt;/h1>
 &lt;p>Through the Cox Model we could evaluate relevant covariates for survival. Once fitted, we plotted the model parameters through a forest plot and we found both:&lt;/p>
 &lt;ul>
 &lt;li>Risk factors: age group between 76-89, positive history of cardiovascular disease, presence of bone methastasis, heart strain ECG reading, tumor size.&lt;/li>
 &lt;li>Protective factors: treatment with 1.0 mg DES&lt;/li>
 &lt;/ul>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/cox_forest.png" class="center" />
+&lt;img src="/biostatistics/cox_forest.png" class="center" />
 &lt;p>After fitting the Cox model, it was possible to predict the theoretical survival of a patient based on its health parameters. The selected patients for this evaluation had the following parameters:&lt;/p>
 &lt;ul>
 &lt;li>Patient 1 (median patient): no history of CVD, normal ECG, median tumor size, median weight index, no bone methastasis, lower age group.&lt;/li>
@@ -43,12 +43,12 @@ As can be seen in the stratified plot, there seems to be a higher survival for p
 &lt;/ul>
 &lt;p>As expected, patients with severe conditions showed a lower survival, especially the ones having both bad cancer and cardiovascular conditions. What was found of interest is also that in all patients, the 1.0 mg DES treatment performed better, with the other treatments performing similarly.&lt;/p>
 &lt;p>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/adjusted_curves1.png" class="center" />
-&lt;img src="https://www.dacolombo.github.io/biostatistics/adjusted_curves2.png" class="center" />
+&lt;img src="/biostatistics/adjusted_curves1.png" class="center" />
+&lt;img src="/biostatistics/adjusted_curves2.png" class="center" />
 &lt;/p>
 &lt;h1 id="accelerated-failure-time-aft-model">Accelerated Failure Time (AFT) model&lt;/h1>
 &lt;p>In order to get a confirmation of what was observed, we fitted an accelerated failure time model with the same covariates found to be relevant in the Cox model. The fitted model resulted in the survival time being distributed as a Weibull with coefficients (0.89, 1.12), with the AFT interpretation of the covariates being in line with the proportional hazard intepretation: variables found to increase the hazard were found to reduce the time of survival and vice versa.&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/aft.png" class="center" />
+&lt;img src="/biostatistics/aft.png" class="center" />
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -93,7 +93,7 @@ As can be seen in the stratified plot, there seems to be a higher survival for p
 &lt;h1 id="logistic-regression-model">Logistic regression model&lt;/h1>
 &lt;p>We then used logistic regression to model the survival outcome based on the variables related to the patients. We managed to get a model with a sufficiently high AUC=0.72 and by using a sperimental threshold of 0.35 we obtained specificity and sensitivity at around 65%.
 Also in this case, the results were concordant with what was observed before: treatment with 5.0 mg DES and a history of CVD were found to significantly increase the odds of the event.&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/logistic_regression.png" class="center" />
+&lt;img src="/biostatistics/logistic_regression.png" class="center" />
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -140,14 +140,14 @@ Also in this case, the results were concordant with what was observed before: tr
 &lt;p>To complete our analysis, we decided to use a more advanced model to correctly estimate marginal probability of an event in the presence of competing events for the same outcome. By considering cardiovascular events and cancer complications events as two competing risks for death, we evaluated how each covariate affected the two events for the patient.
 As can be seen in the table below, some interesting results can be evaluated from the competing risk analysis (note that hazard ratios significantly different from 1 are highlighted).
 First of all, it is evident that 1.0 mg of DES is a protective factor for death by prostate cancer, while 5.0 mg of DES is a risk factor for death by cardiovascular events. Moreover, as expected, we can see that cardiovascular-related covariates (e.g. problematic ECG) have an influence on cardiovascular events, while tumor-related covariates (e.g. tumore size, bone methastasis) have an influence on death by prostate cancer.&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/car_coefficients.png" class="center" />
+&lt;img src="/biostatistics/car_coefficients.png" class="center" />
 &lt;p>With this model we could then evaluate the cumulative incidence for each death cause stratified by treatment. With this plots, it&amp;rsquo;s possible to see that the probability of a cardiovascular event is highly increased with 5.0 mg of DES, while 1.0 mg of DES decreases the probability of death due to prostate cancer with respect to both other doses and placebo.&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/biostatistics/car_plots.png" class="center" />
+&lt;img src="/biostatistics/car_plots.png" class="center" />
 &lt;h1 id="conclusions">Conclusions&lt;/h1>
 &lt;p>We evaluated the presence of correlation between DES exposure and cardiovascular events, observing that 5.0 mg of DES are positively related to death caused by cardiovascular events.
 Through the Cox PH and AFT model we evaluated the significant variables that inluence the survival of patients. Through these variables, we found that the optimal dose of DES is 1.0 mg as it significantly reduces the hazard.
 With logistic regression, we could build a model to classify a patient at risk for cardiovascular events, confirming that the treatment with 5.0 mg of DES are positively related to cardiovascular events.
-Lastly, through competing risk analysis we could observe the differences of the impact of variables on the different events of interest: death due to cardiovascular events and due to prostate cancer. Thanks to this analysis, we found that some variables not relevant in the standard Cox PH model becomes relevant for the event-specific model, like ECG read, cancer size and treatment with 5.0 mg DES. With this model, we could more percisely assess the parameters to consider and the best possible treatment.&lt;/p></content></item><item><title>Genomics Project</title><link>https://www.dacolombo.github.io/projects/genomics/</link><pubDate>Fri, 30 Apr 2021 10:25:32 +0200</pubDate><guid>https://www.dacolombo.github.io/projects/genomics/</guid><description>The main topics of this project are:
+Lastly, through competing risk analysis we could observe the differences of the impact of variables on the different events of interest: death due to cardiovascular events and due to prostate cancer. Thanks to this analysis, we found that some variables not relevant in the standard Cox PH model becomes relevant for the event-specific model, like ECG read, cancer size and treatment with 5.0 mg DES. With this model, we could more percisely assess the parameters to consider and the best possible treatment.&lt;/p></content></item><item><title>Genomics Project</title><link>/projects/genomics/</link><pubDate>Fri, 30 Apr 2021 10:25:32 +0200</pubDate><guid>/projects/genomics/</guid><description>The main topics of this project are:
 Data Mining Reads trimming Quality control Alignment bowtie2 minimap2 Assembly ABySS Canu Annotation Evaluation of the differences in chloroplast genome assembly using Illumina and Oxford Nanopore reads This is the project that me and two of my collegues had done for the evaluation of the Genomics course. We could access for the first time to a server that the University provided to us in order to do all the computational tasks.</description><content>&lt;ul>
 &lt;li>&lt;/li>
 &lt;/ul>
@@ -183,8 +183,8 @@ After some research, we found a good candidate: &lt;a href="https://en.wikipedia
 &lt;/ul>
 &lt;p>We then downloaded the fastq files of the runs with &lt;code>fastq-dump&lt;/code>:
 &lt;div class="collapsable-code">
-&lt;input id="571394826" type="checkbox" />
-&lt;label for="571394826">
+&lt;input id="738965412" type="checkbox" />
+&lt;label for="738965412">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -200,8 +200,8 @@ fastq-dump --defline-qual &amp;#34;&amp;#43;&amp;#34; --gzip --clip ERR4656976
 &lt;h4 id="illumina-reads-trimming">Illumina Reads Trimming&lt;/h4>
 &lt;p>To do this for Illumina reads, a FASTA file containing all of the possible adapters is needed. The command to perform the trimming is &lt;a href="https://github.com/ExpressionAnalysis/ea-utils/blob/wiki/FastqMcf.md">&lt;code>fastq-mcf&lt;/code>&lt;/a>, and was run with the following options:
 &lt;div class="collapsable-code">
-&lt;input id="375289416" type="checkbox" />
-&lt;label for="375289416">
+&lt;input id="873246951" type="checkbox" />
+&lt;label for="873246951">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -215,8 +215,8 @@ In our case, the output of this command indicated that no adapters were found: t
 &lt;h4 id="nanopore-reads-trimming">Nanopore Reads Trimming&lt;/h4>
 &lt;p>For Nanopore reads, the trimming can be performed with the command &lt;a href="https://github.com/rrwick/Porechop">&lt;code>porechop&lt;/code>&lt;/a>. This tool searches for the adapters at the ends and in the middle of a sample of the reads: the adapters with the higher mapping percentage are then searched in every read and removed. We run the following command:
 &lt;div class="collapsable-code">
-&lt;input id="841362975" type="checkbox" />
-&lt;label for="841362975">
+&lt;input id="159842673" type="checkbox" />
+&lt;label for="159842673">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -245,8 +245,8 @@ The reads mapped to the references more or less with the same percentage (betwee
 &lt;p>One of the main tools to align Illumina reads to a reference is &lt;code>bowtie2&lt;/code>. For an overview on how to use it, refer to its &lt;a href="https://github.com/BenLangmead/bowtie2">github page&lt;/a>.&lt;br>
 The first thing to do in order to run bowtie2 is creating an index of the reference, which will be stored as a .fai file. This can be done with the &lt;code>bowtie2-build&lt;/code> command:
 &lt;div class="collapsable-code">
-&lt;input id="842597361" type="checkbox" />
-&lt;label for="842597361">
+&lt;input id="267513489" type="checkbox" />
+&lt;label for="267513489">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -257,8 +257,8 @@ bowtie2-build Prunus_persica_chloroplast.fasta persica_CHL
 &lt;/p>
 &lt;p>After creating the reference index, the alignment can be performed. As the output of bowtie2 is a .SAM file, which occupies a lot of space, it&amp;rsquo;s suggested to directly convert it into the BAM format. This can be done with &lt;code>samtools&lt;/code> (see &lt;a href="https://www.htslib.org/doc/samtools.html">samtools manual&lt;/a>). In particular, &lt;code>samtools view&lt;/code> was used (by piping the two commands):
 &lt;div class="collapsable-code">
-&lt;input id="239564781" type="checkbox" />
-&lt;label for="239564781">
+&lt;input id="514628397" type="checkbox" />
+&lt;label for="514628397">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -271,8 +271,8 @@ bowtie2 -x «dir to reference»/persica_CHL -p 10\
 &lt;/p>
 &lt;p>As a last step, the resulting BAM file can be better used (and stored in a more efficient way) by ordering the reads in it by position. This was done with &lt;code>samtools sort&lt;/code>:
 &lt;div class="collapsable-code">
-&lt;input id="532984176" type="checkbox" />
-&lt;label for="532984176">
+&lt;input id="274683951" type="checkbox" />
+&lt;label for="274683951">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -284,8 +284,8 @@ samtools sort -o ERR4762302.sort.bam ERR4762302.bam
 &lt;h4 id="alignment-of-nanopore-reads-minimap2">Alignment of Nanopore reads: minimap2&lt;/h4>
 &lt;p>The tools we decided to use for the alignment of Nanopore reads was &lt;code>minimap2&lt;/code>. We referred to its &lt;a href="https://github.com/lh3/minimap2">github readme&lt;/a> and its help page to run it. Also in this case, we piped it with the &lt;code>samtools view&lt;/code> command in order to convert the SAM output to the BAM format and we then sorted the file by position:
 &lt;div class="collapsable-code">
-&lt;input id="317569482" type="checkbox" />
-&lt;label for="317569482">
+&lt;input id="429718653" type="checkbox" />
+&lt;label for="429718653">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -299,8 +299,8 @@ samtools sort -@ 10 -o ERR4656976.sort.bam ERR4656976.bam;
 &lt;h1 id="reads-extraction">Reads Extraction&lt;/h1>
 &lt;p>The mapped reads contained in the BAM file can be extracted with &lt;code>samtools view&lt;/code>:
 &lt;div class="collapsable-code">
-&lt;input id="218954637" type="checkbox" />
-&lt;label for="218954637">
+&lt;input id="624918375" type="checkbox" />
+&lt;label for="624918375">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -314,8 +314,8 @@ samtools view -@ 10 -b -F 4 -o ERR4656976_persica_mapped.sort.bam ERR4656976.sor
 This command will remove all the reads that are unmapped (mapped with the &lt;code>4&lt;/code> flag) in the output BAM file.&lt;/p>
 &lt;p>After extracting the reads, the mapped reads can be counted with:
 &lt;div class="collapsable-code">
-&lt;input id="162789543" type="checkbox" />
-&lt;label for="162789543">
+&lt;input id="945863217" type="checkbox" />
+&lt;label for="945863217">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -329,8 +329,8 @@ This procedure was carried out with different tools for Illumina and Nanopore re
 &lt;ul>
 &lt;li>For Illumina reads, &lt;code>samtools fastq&lt;/code> was used:
 &lt;div class="collapsable-code">
-&lt;input id="653918247" type="checkbox" />
-&lt;label for="653918247">
+&lt;input id="849521763" type="checkbox" />
+&lt;label for="849521763">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -343,8 +343,8 @@ samtools fastq -@ 10 -1 ERR4762302_persica_mapped_1.fastq.gz\
 &lt;/li>
 &lt;li>For Nanopore reads, &lt;code>bedtools bamtofastq&lt;/code> was used (see &lt;a href="https://bedtools.readthedocs.io/en/latest/content/tools/bamtofastq.html">bamtofastq manual&lt;/a>):
 &lt;div class="collapsable-code">
-&lt;input id="784693251" type="checkbox" />
-&lt;label for="784693251">
+&lt;input id="672985134" type="checkbox" />
+&lt;label for="672985134">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -360,8 +360,8 @@ gzip ERR4656976_persica_mapped.fastq;
 &lt;p>The main parameter to evaluate the alignment of reads on a reference genome is their coverage.&lt;br>
 To compute it, we build the reference index with &lt;code>samtools faidx&lt;/code> and then we used&lt;code>bedtools genomecov&lt;/code> on it (see &lt;a href="https://bedtools.readthedocs.io/en/latest/content/tools/genomecov.html">genomecov manual&lt;/a>):
 &lt;div class="collapsable-code">
-&lt;input id="532196847" type="checkbox" />
-&lt;label for="532196847">
+&lt;input id="512739486" type="checkbox" />
+&lt;label for="512739486">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -385,8 +385,8 @@ bedtools genomecov -d -ibam ERR4656976_persica_mapped.sort.bam\
 &lt;/ol>
 &lt;p>By importing this file in R, it&amp;rsquo;s possible to use the data in the third column to plot the per-base-coverage and to compute its mean:
 &lt;div class="collapsable-code">
-&lt;input id="325486197" type="checkbox" />
-&lt;label for="325486197">
+&lt;input id="751982634" type="checkbox" />
+&lt;label for="751982634">
 &lt;span class="collapsable-code__language">R&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -404,12 +404,12 @@ mean(Covbed_Nanopore$V3)
 &lt;/p>
 &lt;p>Here are the two resulting plots:&lt;/p>
 &lt;p>
-&lt;img src="https://www.dacolombo.github.io/genomics/Coverage_illumina.jpeg" class="left" style="max-width:45%; display:block; float:left; white-space:nowrap; margin-left:15px; margin-right:auto; padding-bottom:15px;" />
-&lt;img src="https://www.dacolombo.github.io/genomics/Coverage_nanopore.jpeg" class="right" style="max-width:45%; display:block; white-space:nowrap; overflow:hidden; margin-left:auto; margin-right:15px; padding-bottom:15px" />
+&lt;img src="/genomics/Coverage_illumina.jpeg" class="left" style="max-width:45%; display:block; float:left; white-space:nowrap; margin-left:15px; margin-right:auto; padding-bottom:15px;" />
+&lt;img src="/genomics/Coverage_nanopore.jpeg" class="right" style="max-width:45%; display:block; white-space:nowrap; overflow:hidden; margin-left:auto; margin-right:15px; padding-bottom:15px" />
 &lt;/p>
 &lt;p>We assumed that the coverages were more than sufficient to satisfy the conditions for a good assembly. We also noted that for the Nanopore reads, there were some high-coverage regions, that we hypothesized were repeated regions.&lt;br>
 We performed a BLAST of the reference to itself, in order to confirm our hypothesis.&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/genomics/Reference_dotplot.png" class="center" />
+&lt;img src="/genomics/Reference_dotplot.png" class="center" />
 &lt;p>As can be seen in the resulting dotplot, there are two regions which are inversely repeated. These are exactly positioned in the regions for which the Nanopore reads have an increased coverage. With this we could observe that the reference genome presented Inversed Repeats (IR), which are quite common in chloroplasts regions.&lt;br>
 The fact that the coverage has high differences in specific regions may induce some problems in the assembly, and needs to be taken into account.&lt;/p>
 &lt;h1 id="the-assembly">The assembly&lt;/h1>
@@ -428,8 +428,8 @@ The fact that the coverage has high differences in specific regions may induce s
 &lt;p>Before running the actual assembly, some steps are required to optimize the parameter of the assembly itself.&lt;br>
 The first thing to do in order to have the best assembly possible is to find the best &lt;strong>kmer size&lt;/strong>. This was done following the &lt;a href="https://github.com/bcgsc/abyss#optimizing-the-parameter-k">ABySS readme&lt;/a>:
 &lt;div class="collapsable-code">
-&lt;input id="876914253" type="checkbox" />
-&lt;label for="876914253">
+&lt;input id="684139725" type="checkbox" />
+&lt;label for="684139725">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -445,8 +445,8 @@ done
 &lt;/p>
 &lt;p>After this is done, the following commands were run in order to evaluate the goodness of the assembly for each k value:
 &lt;div class="collapsable-code">
-&lt;input id="271893546" type="checkbox" />
-&lt;label for="271893546">
+&lt;input id="823794165" type="checkbox" />
+&lt;label for="823794165">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -456,8 +456,8 @@ abyss-fac k*/pmandshurica-unitigs.fa
 &lt;/div>
 It&amp;rsquo;s possible that the command abyss-fac is not found. In that case, you need to specify the ABySS directory in which the program is installed, that should be:
 &lt;div class="collapsable-code">
-&lt;input id="219483657" type="checkbox" />
-&lt;label for="219483657">
+&lt;input id="719825436" type="checkbox" />
+&lt;label for="719825436">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -468,8 +468,8 @@ It&amp;rsquo;s possible that the command abyss-fac is not found. In that case, y
 &lt;/p>
 &lt;p>We obtained the following table as a result:
 &lt;div class="collapsable-code">
-&lt;input id="275831649" type="checkbox" />
-&lt;label for="275831649">
+&lt;input id="675834912" type="checkbox" />
+&lt;label for="675834912">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -502,8 +502,8 @@ We observed that the best kmer size to use was &lt;code>65&lt;/code>, as it led 
 &lt;p>The amount of reads needed to obtain a wanted coverage was computed through the Lander/Waterman equation (the formula can be viewed in &lt;a href="https://www.illumina.com/documents/products/technotes/technote_coverage_calculation.pdf">this document&lt;/a>).&lt;/p>
 &lt;p>We performed the sampling with &lt;code>seqtk sample&lt;/code> (see &lt;a href="https://github.com/lh3/seqtk">seqtk github page&lt;/a>):
 &lt;div class="collapsable-code">
-&lt;input id="628537914" type="checkbox" />
-&lt;label for="628537914">
+&lt;input id="475921638" type="checkbox" />
+&lt;label for="475921638">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -521,8 +521,8 @@ done
 &lt;/p>
 &lt;p>To evaluate which is the best sample size, ABySS was run on all the samples:
 &lt;div class="collapsable-code">
-&lt;input id="572638419" type="checkbox" />
-&lt;label for="572638419">
+&lt;input id="531462798" type="checkbox" />
+&lt;label for="531462798">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -545,8 +545,8 @@ We observed that the best assembly was performed with the sample of 820.000 read
 &lt;h4 id="canu">Canu&lt;/h4>
 &lt;p>As canu requires lower coverages to perform an assembly, samples of lower sizes were selected by running &lt;code>seqtk sample&lt;/code>:
 &lt;div class="collapsable-code">
-&lt;input id="849135726" type="checkbox" />
-&lt;label for="849135726">
+&lt;input id="582194367" type="checkbox" />
+&lt;label for="582194367">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -562,8 +562,8 @@ done
 &lt;/p>
 &lt;p>Then, we run canu on all the samples with the following comand:
 &lt;div class="collapsable-code">
-&lt;input id="642318795" type="checkbox" />
-&lt;label for="642318795">
+&lt;input id="917623854" type="checkbox" />
+&lt;label for="917623854">
 &lt;span class="collapsable-code__language">bash&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
 &lt;/label>
@@ -583,7 +583,7 @@ We observed that the best assembly was performed with the sample of 20.000 reads
 &lt;h2 id="differences-in-the-assembly">Differences in the assembly&lt;/h2>
 &lt;p>The two assemblies resulted in quite different sequences in term of length. We thought that this could be due to the presence of repeated sequences or the presence of overlapped sequences in the ends (this is quite frequent with chloroplast genomes, that are circular).&lt;br>
 The &lt;code>suggestCircular&lt;/code> flag in the contigs.fasta file resulting from canu assembly was equal to &lt;code>no&lt;/code>, so we thought to BLAST the sequence to itself in order to do further investigations. This was the resulting dotplot:&lt;/p>
-&lt;img src="https://www.dacolombo.github.io/genomics/Canu_dotplot.png" class="center" />
+&lt;img src="/genomics/Canu_dotplot.png" class="center" />
 &lt;p>In this image, the presence of Inversed Reapeats (IR) can be observed. These sequences have probably led to problems in the assembly of Nanopore reads.&lt;/p>
 &lt;h2 id="annotation">Annotation&lt;/h2>
 &lt;p>The last step was to annotate the assembly, in order to observe the presence of chloroplast genes and evaluate the goodness of the assembly.&lt;br>
@@ -591,11 +591,11 @@ To do this, the tool &lt;a href="https://chlorobox.mpimp-golm.mpg.de/geseq.html"
 &lt;p>We obtained the following annotations for the two assemblies:&lt;/p>
 &lt;p>
 &lt;figure class="center" >
-&lt;img src="https://www.dacolombo.github.io/genomics/Abyss_annotation.jpeg" style="width:75%;" />
+&lt;img src="/genomics/Abyss_annotation.jpeg" style="width:75%;" />
 &lt;figcaption class="center" style="width:75%;" >Annotation of ABySS assembly&lt;/figcaption>
 &lt;/figure>
 &lt;figure class="center" >
-&lt;img src="https://www.dacolombo.github.io/genomics/Canu_annotation.jpeg" style="width:75%;" />
+&lt;img src="/genomics/Canu_annotation.jpeg" style="width:75%;" />
 &lt;figcaption class="center" style="width:75%;" >Annotation of Canu assembly&lt;/figcaption>
 &lt;/figure>
 &lt;/p>
